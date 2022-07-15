@@ -55,10 +55,10 @@ params:
     enabled: false # needs to be explicitly set
     title: ExampleSite
     subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
+    # imageUrl: "<img location>"
+    # imageWidth: 120
+    # imageHeight: 120
+    # imageTitle: my image
     buttons:
       - name: Posts
         url: posts
@@ -72,7 +72,7 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/declan-morrise"
+      url: "https://github.com/declan-morris"
     - name: linkedin
       url: "https://www.linkedin.com/in/declanmorris/"
 
