@@ -68,6 +68,16 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Hugo setup
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          # Download (if necessary) and use Hugo extended version. Example: true
+          # extended: true
+          
+      - name: Build
+        run: hugo --minify
+        
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
