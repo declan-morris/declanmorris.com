@@ -73,7 +73,7 @@ jobs:
         with:
           hugo-version: latest
           # Download (if necessary) and use Hugo extended version. Example: true
-          # extended: true
+          extended: true
           
       - name: Build
         run: hugo --minify
