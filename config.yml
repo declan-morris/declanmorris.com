@@ -8,8 +8,6 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-# googleAnalytics: UA-123-45
-
 minify:
   disableXML: true
   minifyOutput: true
@@ -76,9 +74,9 @@ params:
     - name: linkedin
       url: "https://www.linkedin.com/in/declanmorris/"
 
-  # analytics:
-  #   google:
-  #     SiteVerificationTag: "XYZabc"
+  analytics:
+    google:
+      SiteVerificationTag: "G-KF1CDXF60F"
   #   bing:
   #     SiteVerificationTag: "XYZabc"
   #   yandex:
