@@ -1,7 +1,12 @@
 ---
 title: "Terraform Provider Secrets with Bitwarden CLI"
+description: Getting terraform provider secrets securely with bitwarden CLI
 date: 2022-08-14T20:50:20+01:00
-draft: true
+draft: false
+tags:
+- terraform
+- bitwarden
+- iac
 ---
 
 # Terraform Provider Secrets with Bitwarden CLI
@@ -14,8 +19,7 @@ Some of your most important secrets will be your provider secrets, these typical
 
 Using the bitwarden cli means your secrets are only ever stored in environment variables within your local session, this allows you to upload code publicly, safe in the knowledge that your secrets are secured by bitwarden (or another password manager).
 
-# Examples
-## bitWarden boilerplate to login
+## bitWarden login and boilerplate sync
 
 To use the bitwarden cli you will need to download and install the cli. Instructions for this differ based on your operating system but further instructions can be found [here](https://bitwarden.com/help/cli/#download-and-install)
 
@@ -35,9 +39,9 @@ bw sync
 
 ## Provider Examples
 
-When you create a secret that you want to later access via the bw cli
+Create a secret that you want to later access via the bw cli
 
-![example of bitwarden key](/blog/terraformSecrets/bitwardenKey.png#center)
+![example of bitwarden key](bitwardenKey.png#center)
 
 ### AWS
 
@@ -55,7 +59,11 @@ export ARM_SUBSCRIPTION_ID=$(bw get password azure-terraform-subscriptionid --se
 export ARM_TENANT_ID=$(bw get password azure-terraform-tenantid --session $BW_SESSION)
 ```
 
-## Full Example - in prepareEnv.sh
+## Creating and sourcing the script
+
+You can of course just execute these commands in the current window to populate these variables before you start coding, however if you want to streamline the process yous should save the boilerplate as well as any provider secrets you want to pull in a script that that be sourced before you start development. 
+
+Below is an example that can be saved as `prepareEnv.sh`.
 
 
 ``` bash
@@ -69,4 +77,4 @@ export AWS_SECRET_ACCESS_KEY=$(bw get password aws-terraform-accesskey --session
 
 To use the above, source the script with `source prepareEnv.sh`, this will request you to login then add the environment variable to your current shell. After this you can use terraform as usual with `terraform apply` without needing to supply any aws credentials.
 
-You can check that the variables have been exported to the current shell by 
+You can check that the variables have been exported to the current shell by executing `echo $AWS_ACCESS_KEY_ID`. This should print out the value you have saved as a secret in bitwarden under the login of `aws-terraform-keyid`.
