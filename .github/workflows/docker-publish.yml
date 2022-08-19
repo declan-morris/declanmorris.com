@@ -101,11 +101,29 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Docker compose pull on vps
+      - name: Pull latest images on VPS
         uses: appleboy/ssh-action@master
         with:
             host: ${{ secrets.VPS_HOST }}
             USERNAME: ${{ secrets.VPS_DEPLOY_USER }}
             PORT: ${{ secrets.VPS_SSH_PORT }}
             KEY: ${{ secrets.VPS_SSHKEY }}
-            script: cd ${{ secrets.VPS_PROJECT_PATH }} && docker-compose pull && docker-compose down && docker-compose up -d
+            script: cd ${{ secrets.VPS_PROJECT_PATH }} && docker-compose pull 
+            
+      - name: Restart docker compose services
+        uses: appleboy/ssh-action@master
+        with:
+            host: ${{ secrets.VPS_HOST }}
+            USERNAME: ${{ secrets.VPS_DEPLOY_USER }}
+            PORT: ${{ secrets.VPS_SSH_PORT }}
+            KEY: ${{ secrets.VPS_SSHKEY }}
+            script: cd ${{ secrets.VPS_PROJECT_PATH }} && docker-compose down && docker-compose up -d
+            
+      - name: Prune old images
+        uses: appleboy/ssh-action@master
+        with:
+            host: ${{ secrets.VPS_HOST }}
+            USERNAME: ${{ secrets.VPS_DEPLOY_USER }}
+            PORT: ${{ secrets.VPS_SSH_PORT }}
+            KEY: ${{ secrets.VPS_SSHKEY }}
+            script: docker image prune -af
