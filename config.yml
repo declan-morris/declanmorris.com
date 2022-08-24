@@ -1,4 +1,4 @@
-baseURL: https://declan-morris.com/
+baseURL: https://declanmorris.com/
 languageCode: en-gb
 title: Declan Morris
 theme: "PaperMod"
@@ -104,7 +104,7 @@ menu:
       weight: 20
     - identifier: resume
       name: resume
-      url: https://declan-morris.com/cv.pdf
+      url: /cv.pdf
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
