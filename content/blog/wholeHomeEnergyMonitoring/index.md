@@ -25,8 +25,57 @@ You will need to set up your smart meter. This can be done using their chat like
 
 Once the setup in the application is complete, you should be able to see you data in the app, some people reported the data going back to their smart meter install but mine only shows from when I associated with Bright.
 
-Home Screen
-![Bright Home Screen](BrightHomeScreen.png?w=10)
-{{ $image := .Resources.GetMatch "BrightHomeScreen.png" }}
-{{ $image := $image.Resize "600x" }}
-<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+### Home Screen and setup
+
+{{< figure src="BrightHomeScreen.png" width=300 >}}
+
+Chat set up 
+{{< figure src="BrightChatSetupP1.png" width=300 >}}
+
+{{< figure src="BrightChatSetupP2.png" width=300 >}}
+
+### Example Data after setup
+Data over a day
+{{< figure src="Bright30MinData.png" width=300 >}}
+
+Data over months
+{{< figure src="Bright12MonthData.png" width=300 >}}
+
+## Getting the data into Home Assistant
+Now that Bright have a copy of the data, you can start piping that data to Home Assistant via a custom integration. To do this we'll need a custom integration from HACS, if you've never used or heard of HACS there are guide on youtube on how to install. To get the repo which integrates with Bright follow the below instructions.
+* Go to the HACs integration screen
+* Click on the top right then “Custom Repositories”
+* Add the URL `https://github.com/HandyHat/ha-hildebrandglow` and the type is `integration`
+* Restart homeassistant 
+
+Now it's installed, go to the “normal” integrations page to add the new integration there. Enter your username and password to get the data start flowing into homeassistant. 
+
+The data exposed by this integration is fairly comprehensive with the below data exposed
+
+**Electricity**
+* Energy consumption today
+* Energy consumption year
+* Tariff standing charge
+* Tariff energy rate
+* Cost Today
+
+**Gas**
+* Energy consumption today
+* Energy consumption year
+* Tariff standing charge
+* Tariff energy rate
+* Cost Today
+
+## Integrating these values into the HA energy dashboard
+Now we have the data being piped into HA we can use these points for the energy dashboard. To do this we'll be pulling 2 data points from each energy source (electric and gas). There are different ways to do this but the below is how I set mine up.
+
+Navigate to the energy dashboard and initiate the wizard, first we'll configure the electricity usage by telling HA to use the energy consumption today. Next we'll do the same with the gas supply to pull that information if your house uses gas as the main heat source. I am still testing the cost data coming from the integration as the results seem rather high. You can also use the costs from a template sensor if you want to set it up that way.
+
+Once these two steps are complete you should be greeted with a pretty in depth energy graph showing usage and between what hours, enjoy! A caveat on the data that I have seen is that the number in bright vs the number in HA are slightly different. For me this isn't an issue as I'm interested in trends over time and looking at what proportion certain devices are using compared to my whole home. 
+
+### Example Data in homeassistant after setup
+Data over a day
+{{< figure src="HADayData.png" width=300 >}}
+
+Data over months
+{{< figure src="HAWeekData.png" width=300 >}}
