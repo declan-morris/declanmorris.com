@@ -1,6 +1,6 @@
 ---
 title: "UK whole home energy monitoring with Bright"
-description: Getting terraform provider secrets securely with bitwarden CLI
+description: Subscribe to your own smart meter data via Bright for whole home energy monitoring 
 date: 2022-09-11
 draft: false
 tags:
