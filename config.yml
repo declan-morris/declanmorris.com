@@ -52,7 +52,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Declan Morris"
-    Content: 30 something software engineer with interests in DevOps, security and SysAdmin
+    Content: 30 something cloud engineer with interests in DevOps, security and SysAdmin
 
   socialIcons:
     - name: github
