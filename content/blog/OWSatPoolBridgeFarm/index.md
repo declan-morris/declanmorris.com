@@ -3,8 +3,7 @@ title: "Open Water Swimming at Pool Bridge Farm York"
 description: Open Water Swimming at Pool Bridge Farm York
 date: 2023-04-19
 draft: false
-tag:
-  - "blogpost"
+tags:
   - "Open Water Swimming"
   - "Swimming"
   - "Pool Bridge Farm"
