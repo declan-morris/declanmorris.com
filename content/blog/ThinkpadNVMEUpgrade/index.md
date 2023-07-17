@@ -19,15 +19,20 @@ In this guide, we'll walk you through the step-by-step process of installing an 
 **Disclaimer: Before proceeding with any hardware upgrade, please ensure you have a good understanding of computer hardware and are comfortable working with it. Additionally, remember that opening your laptop might void the warranty, so perform this upgrade at your own risk. If you're unsure, it's always best to seek assistance from a professional technician.**
 
 1. Find a compatible NVME SSD, the most popular one and the one I'll be using here is the SN520. The SSD needs to be a B + M keyed NVME SSD. You'll also need an extender which can be purchased for ~£4 or less from eBay or Aliexpress.
-![[SN580 with Extender.jpg|500]]
+{{< figure src="SN580 with Extender.jpg" width=500 >}}
 2. **Disable the internal battery in the bios**. To do this hit enter on start up and follow instructions to enter bios and disable internal battery*
 3. Flip the laptop over, and remove the 2nd battery if you have one. Then remove the back cover from your laptop.
-![[T580 Empty WWAN Slots.jpg|600]]
+{{< figure src="T580 Empty WWAN Slots.jpg" width=600 >}}
+
 4. Identify the SSD slot, below images are for T580 so T480 may differ in appearance.
 5. Connect the SSD and extender to accommodate the correct spacing. Below you can see both with and without the spacer and how the module extends the NVME SSD. The space does not actually add anything except ensure that the SSD connects securely to the laptop motherboard.
-![[SN580 installed.jpg|400]]
-![[SN580 installed with extender.jpg|400]]
-![[SN580 installed with extender completed.jpg|400]]
+{{< figure src="SN580 installed.jpg" width=400 >}}
+
+{{< figure src="SN580 installed with extender.jpg" width=400 >}}
+
+{{< figure src="SN580 installed with extender completed.jpg" width=400 >}}
+
 6. Confirm the second drive is correctly registering in the BIOS. Here you can see the second SN520 NVME is being correctly registered.
-![[SN580 Bios registered.jpg|1000]]
+{{< figure src="SN580 Bios registered.jpg" width=1000 >}}
+
 7. Feel free to use the space how you wish, install more software/games in your current OS or install a completely separate OS on the other SSD.
