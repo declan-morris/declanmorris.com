@@ -8,6 +8,7 @@ tags:
 - T580
 - T480
 - Laptop Upgrade
+- WWAN SSD
 ---
 
 The ThinkPad T580 is a reliable and powerful laptop, but if you find yourself running out of storage space, or if you want to try out a different OS alongside your current one, upgrading with a second SSD is an excellent solution. However, 2242 NVME SSD's are really hard to find, maybe due to the popularity of the T580 and T480 2242 NVME SSD's and when you do find them they can be quite expensive. Using a 2230 and an extender you can get a larger capacity drive for cheaper than the 2242 alternatives.
