@@ -57,8 +57,6 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/declan-morris"
-    - name: linkedin
-      url: "https://www.linkedin.com/in/declanmorris/"
 
   analytics:
     google:
