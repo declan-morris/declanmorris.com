@@ -1,7 +1,7 @@
 baseURL: https://declanmorris.com/
 languageCode: en-gb
 title: Declan Morris
-theme: "PaperMod"
+theme: [hugo-PaperMod]
 
 enableRobotsTXT: true
 buildDrafts: false
