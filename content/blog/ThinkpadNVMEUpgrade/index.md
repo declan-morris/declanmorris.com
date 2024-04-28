@@ -1,7 +1,7 @@
 ---
-title:  SSD in ThinkPad T series - 2230 SSD with extender 
-description: Short guide on how to install an NVME SSD in the WWAN slot in the ThinkPad T series with an extender
-date: 2023-07-17
+title: "SSD in ThinkPad T series - 2230 SSD with extender"
+description: "Short guide on how to install an NVME SSD in the WWAN slot in the ThinkPad T series with an extender"
+date: "2023-07-17"
 draft: false
 tags:
 - Thinkpad
